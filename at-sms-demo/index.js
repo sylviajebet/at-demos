@@ -16,10 +16,10 @@ const AfricasTalking = require("africastalking")(credentials);
 const sms = AfricasTalking.SMS;
 // Send SMS route
 router.post("/", (req, res) => {
-  const { to, message } = req.body || res.status(400).json({error: "Both 'to' and 'message' are required"});
+  // const { to, message } = req.body || res.status(400).json({error: "Both 'to' and 'message' are required"});
   sms
     .send({ 
-        to: "+254***", // Number of recipient - can be multiple
+        to: "+254723738861", // Number of recipient - can be multiple
         message: "My message - is here!", // Message to be sent 
         enque: true })
     .then(response => {
