@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
   sms
     .send({ 
         to: "+254723738861", // Number of recipient - can be multiple
-        message: "My message - is here!", // Message to be sent 
+        message: "Today is a GOOD day!", // Message to be sent 
         enque: true })
     .then(response => {
       console.log(response);
@@ -30,6 +30,16 @@ router.post("/", (req, res) => {
       console.log(error);
       res.json(error.toString());
     });
+});
+
+// Delivery callback route
+router.post("/delivery", async( req, res ) => {
+  console.log(req.body);
+
+  res.status(200).json({
+      status: "success",
+      message: "SMS received successfully"
+  })
 });
 
 module.exports = router;
