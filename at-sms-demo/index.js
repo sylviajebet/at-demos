@@ -19,9 +19,9 @@ router.post("/", (req, res) => {
   // const { to, message } = req.body || res.status(400).json({error: "Both 'to' and 'message' are required"});
   sms
     .send({ 
-        to: "+254723738861", // Number of recipient - can be multiple
+        to: "+254***", // Number of recipient - can be multiple
         message: "Today is a GOOD day!", // Message to be sent 
-        enque: true })
+        enqueue: true })
     .then(response => {
       console.log(response);
       res.json(response);
