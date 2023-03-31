@@ -2,8 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-router.post("/", (req, res) => {
+router.post("/ussd", (req, res) => {
+
   // Read variables sent via POST from our SDK
+  
   const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
   console.log('####################', req.body);
